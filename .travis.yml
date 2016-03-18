@@ -19,3 +19,5 @@ before_install:
 # Execute the build
 script:
   - ./build.sh > build.log
+  - ls /tmp/or1k-linux-musl/bin
+  - /tmp/or1k-linux-musl/bin/or1k-linux-musl-gcc --version
