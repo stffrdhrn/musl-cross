@@ -1,0 +1,21 @@
+# Run in container-based environment
+sudo: false
+
+# Install the build requirements
+addons:
+  apt:
+    packages:
+    - build-essential
+    - zlib1g-dev
+    - texinfo
+    - flex
+    - bison
+
+# Overwrite some config variables
+before_install:
+  - echo "CC_BASE_PREFIX=/tmp" >> config.sh 
+  - echo "MAKEFLAGS=" >> config.sh
+
+# Execute the build
+script:
+  - ./build.sh
