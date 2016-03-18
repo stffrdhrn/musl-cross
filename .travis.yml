@@ -18,4 +18,4 @@ before_install:
 
 # Execute the build
 script:
-  - ./build.sh
+  - ./build.sh > build.log
