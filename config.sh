@@ -1,26 +1,21 @@
-# ARCH will be auto-detected as the host if not specified
-#ARCH=i486
-#ARCH=x86_64
-#ARCH=powerpc
-#ARCH=arm
-#ARCH=microblaze
-#ARCH=mips
-#ARCH=mipsel
+BINUTILS_VERSION=2.26
+GCC_VERSION=4.9.2
+MUSL_VERSION=1.1.14
+LINUX_HEADERS_VERSION=4.5
 
-CC_BASE_PREFIX=/opt/cross
+ARCH=or1k
+BINUTILS_URL=http://ftp.gnu.org/gnu/binutils/binutils-${BINUTILS_VERSION}.tar.bz2
 
-# If you use arm, you may need more fine-tuning:
-# arm hardfloat v7
-#TRIPLE=arm-linux-musleabihf
-#GCC_BOOTSTRAP_CONFFLAGS="--with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16"
-#GCC_CONFFLAGS="--with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16"
+GCC_URL=https://github.com/openrisc/or1k-gcc/archive/musl-${GCC_VERSION}.tar.gz
 
-# arm softfp
-#TRIPLE=arm-linux-musleabi
-#GCC_BOOTSTRAP_CONFFLAGS="--with-arch=armv7-a --with-float=softfp"
-#GCC_CONFFLAGS="--with-arch=armv7-a --with-float=softfp"
+GCC_EXTRACT_DIR=or1k-gcc-musl-${GCC_VERSION}
+GCC_VERSION=or1k-${GCC_VERSION}
+GCC_BUILTIN_PREREQS=yes
+
+MUSL_VERSION=${MUSL_VERSION}
+
+LINUX_HEADERS_URL=http://www.kernel.org/pub/linux/kernel/v4.x/linux-${LINUX_HEADERS_VERSION}.tar.xz
+
+CC_BASE_PREFIX=/opt/toolchains
 
 MAKEFLAGS=-j8
-
-# Enable this to build the bootstrap gcc (thrown away) without optimization, to reduce build time
-GCC_STAGE1_NOOPT=1
