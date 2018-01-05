@@ -1,12 +1,16 @@
 BINUTILS_VERSION=2.29
-GCC_VERSION=7.0.1
+GCC_VERSION=7.2.0
 MUSL_VERSION=1.1.18
 LINUX_HEADERS_VERSION=4.9
 
 ARCH=or1k
-BINUTILS_URL=http://ftp.gnu.org/gnu/binutils/binutils-${BINUTILS_VERSION}.tar.bz2
+#BINUTILS_URL=http://ftp.gnu.org/gnu/binutils/binutils-${BINUTILS_VERSION}.tar.bz2
+BINUTILS_URL=https://github.com/stffrdhrn/binutils-gdb/archive/or1k-${BINUTILS_VERSION}.tar.gz
 
 GCC_URL=https://github.com/stffrdhrn/or1k-gcc/archive/or1k-${GCC_VERSION}.tar.gz
+
+BINUTILS_EXTRACT_DIR=binutils-gdb-or1k-${BINUTILS_VERSION}
+BINUTILS_VERSION=or1k-${BINUTILS_VERSION}
 
 GCC_EXTRACT_DIR=or1k-gcc-or1k-${GCC_VERSION}
 GCC_VERSION=or1k-${GCC_VERSION}
